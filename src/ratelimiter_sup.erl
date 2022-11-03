@@ -4,7 +4,7 @@
 %%% @doc
 %%% @end
 %%%-------------------------------------------------------------------
--module(tocken_bucket_sup).
+-module(ratelimiter_sup).
 
 -behaviour(supervisor).
 
@@ -23,6 +23,6 @@ init([]) ->
         intensity => 1000,
         period    => 1
     },
-    BucketStorage = ?CHILD(tocken_bucket_storage, worker),
+    BucketStorage = ?CHILD(tocken_bucket, worker),
     Workers = [BucketStorage],
     {ok, {Supflags, Workers}}.

@@ -6,7 +6,7 @@
 %%% @end
 %%% Created : 01. лис 2022 13:31
 %%%-------------------------------------------------------------------
--module(tocken_bucket_app).
+-module(rate_limiter_app).
 -author("olevchenko").
 
 -behaviour(application).
@@ -36,7 +36,7 @@
     {ok, pid(), State :: term()} |
     {error, Reason :: term()}).
 start(_StartType, _StartArgs) ->
-    tocken_bucket_sup:start_link().
+    ratelimiter_sup:start_link().
 
 %%--------------------------------------------------------------------
 %% @private

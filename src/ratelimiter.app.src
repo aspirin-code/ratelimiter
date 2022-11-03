@@ -1,0 +1,12 @@
+{application, ratelimiter,
+    [
+        {description, "requests limiter"},
+        {vsn, "1"},
+        {modules, []},
+        {registered, [ratelimiter_sup]},
+        {applications, [
+            kernel,
+            stdlib
+        ]},
+        {mod, {rate_limiter_app, []}}
+    ]}.
